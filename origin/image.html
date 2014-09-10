@@ -1,0 +1,27 @@
+<html>
+<body>
+body.
+<hr />
+<script type="text/javascript">
+var xhr = new XMLHttpRequest();
+xhr.open('GET', '/gold.jpeg');
+xhr.responseType = 'blob';
+
+xhr.onload = function() {
+  if (this.status == 200) {
+    var img = document.createElement('img');
+    img.src = window.URL.createObjectURL(this.response);
+    img.width = 640;
+    img.height = 400;
+    img.onload = function() {
+        window.URL.revokeObjectURL(this.src);
+    }
+    document.body.appendChild(img);
+  }
+};
+
+xhr.send();
+</script>
+</body>
+</html>
+
