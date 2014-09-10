@@ -8,7 +8,7 @@ function upload() {
 var blob = document.getElementById("f").files[0];
 console.log(blob);
 
-const BYTES_PER_CHUNK = 1024 * 1024;
+const BYTES_PER_CHUNK = 1024;
 const SIZE = blob.size;
 
 var start = 0;
