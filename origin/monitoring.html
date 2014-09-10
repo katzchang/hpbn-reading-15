@@ -1,0 +1,28 @@
+<html>
+<body>
+body.
+<hr />
+<script type="text/javascript">
+var xhr = new XMLHttpRequest();
+xhr.open('GET','/sleep.php?s=10');
+xhr.timeout = 20000;
+
+xhr.addEventListener('loadstart', function() { console.log("loadstart");});
+xhr.addEventListener('load', function() { console.log("load"); });
+xhr.addEventListener('error', function() { console.log("error"); });
+xhr.addEventListener('abort', function() { console.log("abort"); });
+xhr.addEventListener('loadend', function() { console.log("loadend"); });
+
+var onProgressHandler = function(event) {
+  if(event.lengthComputable) {
+    var progress = (event.loaded / event.total) * 100;
+    console.log("progress:" + progress);
+  }
+}
+
+xhr.upload.addEventListener('progress', onProgressHandler);
+xhr.addEventListener('progress', onProgressHandler);
+xhr.send();
+</script>
+</body>
+</html>
