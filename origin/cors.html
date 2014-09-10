@@ -1,17 +1,19 @@
 <script type="text/javascript">
+var al = function(xhr) { return function() { alert(xhr.response); }; };
+
 // script origin: (http, example.com, 80)
 var xhr = new XMLHttpRequest();
-xhr.open('GET', '/resource.js');
-xhr.onload = function() { alert('origin, loaded'); };
+xhr.open('GET', '/resource.json');
+xhr.onload = al(xhr);
 xhr.send();
 
 var cors_xhr = new XMLHttpRequest();
-cors_xhr.open('GET', 'http://localhost:9999/resource.js');
-cors_xhr.onload = function() { alert('cors_xhr, loaded'); };
+cors_xhr.open('GET', 'http://localhost:9999/resource.json');
+cors_xhr.onload = al(cors_xhr);
 cors_xhr.send();
 
 var cors_xhr2 = new XMLHttpRequest();
 cors_xhr2.open('GET', 'http://localhost:9999/resource.php');
-cors_xhr2.onload = function() { alert('cors_xhr2, loaded'); };
+cors_xhr2.onload = al(cors_xhr2);
 cors_xhr2.send();
 </script>
