@@ -1,0 +1,7 @@
+<?php
+// cookie　を使うために必要なあれ
+header('Access-Control-Allow-Origin: http://localhost:8888');
+header('Access-Control-Allow-Credentials: true');
+
+echo print_r($_SERVER, true);
+

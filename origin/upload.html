@@ -1,0 +1,28 @@
+<html>
+<body>
+body.
+<hr />
+<script type="text/javascript">
+var xhr = new XMLHttpRequest();
+xhr.open('POST','/upload.php');
+xhr.onload = function() { console.log(this.response); };
+xhr.send("text string");
+
+var formData = new FormData();
+formData.append('id', 123456);
+formData.append('topic', 'performance');
+
+var xhr = new XMLHttpRequest();
+xhr.open('POST', '/upload.php');
+xhr.onload = function() { console.log(this.response); };
+xhr.send(formData);
+
+var xhr = new XMLHttpRequest();
+xhr.open('POST', '/upload.php');
+xhr.onload = function() { console.log(this.response); };
+var uInt8Array = new Uint8Array([1, 2, 3]);
+xhr.send(uInt8Array);
+</script>
+</body>
+</html>
+
