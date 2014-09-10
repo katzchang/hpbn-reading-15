@@ -1,0 +1,31 @@
+<html>
+<body>
+<input type="file" id="f" name="file" />
+<input type="button" value="upload" onclick="upload()" />
+<hr />
+<script type="text/javascript">
+function upload() {
+var blob = document.getElementById("f").files[0];
+console.log(blob);
+
+const BYTES_PER_CHUNK = 1024 * 1024;
+const SIZE = blob.size;
+
+var start = 0;
+var end = BYTES_PER_CHUNK;
+
+while(start < SIZE) {
+  var xhr = new XMLHttpRequest();
+  xhr.open('POST', '/upload.php');
+  xhr.onload = function() { console.log(this.response); };
+
+  xhr.setRequestHeader('Content-Range', start+'-'+end+'/'+SIZE);
+  xhr.send(blob.slice(start, end));
+
+  start = end;
+  end = start + BYTES_PER_CHUNK;
+}
+}
+</script>
+</body>
+</html>
