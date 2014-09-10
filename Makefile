@@ -1,6 +1,8 @@
 all:
+	$(MAKE) run-origin &
+	$(MAKE) run-thirdparty &
 
-run-client:
-	php -S localhost:8888 -t ./client
-run-server:
-	php -S localhost:9999 -t ./server
+run-origin:
+	php -S localhost:8888 -t ./origin
+run-thirdparty:
+	php -S localhost:9999 -t ./thirdparty
