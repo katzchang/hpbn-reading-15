@@ -8,9 +8,9 @@ $ make all
 
 and open
 
-* http://localhost:8888/cors.html
-* http://localhost:8888/cors_with_credentials.html
-* http://localhost:8888/image.html
-* http://localhost:8888/upload.html
-* http://localhost:8888/upload2.html
-* http://localhost:8888/monitoring.html
+* [http://localhost:8888/cors.html](http://localhost:8888/cors.html)
+* [http://localhost:8888/cors_with_credentials.html](http://localhost:8888/cors_with_credentials.html)
+* [http://localhost:8888/image.html](http://localhost:8888/image.html)
+* [http://localhost:8888/upload.html](http://localhost:8888/upload.html)
+* [http://localhost:8888/upload2.html](http://localhost:8888/upload2.html)
+* [http://localhost:8888/monitoring.html](http://localhost:8888/monitoring.html)
