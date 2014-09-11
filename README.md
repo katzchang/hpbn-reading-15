@@ -1,4 +1,4 @@
-# hsbn-reading-15
+# hpbn-reading-15
 
 [Chapter 15. XMLHttpRequest](http://chimera.labs.oreilly.com/books/1230000000545/ch15.html)
 
